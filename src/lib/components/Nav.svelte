@@ -43,7 +43,7 @@
         onmouseleave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
       >GitHub</a>
       <a
-        href="https://github.com/openkaiden"
+        href="https://docs.openkaiden.ai"
         target="_blank"
         rel="noopener noreferrer"
         class="hidden sm:block px-3 py-1.5 text-sm transition-colors"
