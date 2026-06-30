@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'kaiden',
   tagline: 'AI coding agents in isolated, secured environments',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.png',
 
   future: {
     v4: true,
