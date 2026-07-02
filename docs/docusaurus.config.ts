@@ -3,7 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'kaiden',
+  plugins: ['docusaurus-plugin-goatcounter'],
+
+  title: 'Kaiden Documentation',
   tagline: 'AI coding agents in isolated, secured environments',
   favicon: 'img/icon.png',
 
@@ -80,26 +82,6 @@ const config: Config = {
       ],
       hideOnScroll: false,
     },
-    footer: {
-      style: 'light',
-      links: [
-        {
-          title: 'Documentation',
-          items: [
-            {label: 'What is Kaiden?', to: '/what-is-kaiden'},
-            {label: 'Your First Sandbox', to: '/your-first-sandbox'},
-            {label: 'Network Security', to: '/network-security'},
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {label: 'GitHub', href: 'https://github.com/openkaiden'},
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Kaiden. Open desktop platform for AI coding agents.`,
-    },
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
@@ -108,6 +90,9 @@ const config: Config = {
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 3,
+    },
+    goatcounter: {
+      code: 'openkaiden-website',
     },
   } satisfies Preset.ThemeConfig,
 };
