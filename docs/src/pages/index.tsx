@@ -27,13 +27,13 @@ const gettingStarted: DocCardProps[] = [
   {
     title: 'What is Kaiden?',
     description: 'The core idea: sandboxes, security, and why every agent needs its own isolated environment.',
-    href: '/docs/what-is-kaiden',
+    href: '/what-is-kaiden',
     icon: '◈',
   },
   {
     title: 'Your First Sandbox',
     description: 'Walk through the five-step wizard to create a secured sandbox for any repository.',
-    href: '/docs/your-first-sandbox',
+    href: '/your-first-sandbox',
     icon: '⬡',
   },
 ];
@@ -42,19 +42,19 @@ const configuration: DocCardProps[] = [
   {
     title: 'Credentials & Secrets',
     description: 'Store API keys and tokens in the Secret Vault. Agents never see the values directly.',
-    href: '/docs/credentials-and-secrets',
+    href: '/credentials-and-secrets',
     icon: '◉',
   },
   {
     title: 'AI Agents',
     description: 'Configure Claude Code, Codex, Goose, and other agents with per-agent defaults.',
-    href: '/docs/ai-agents',
+    href: '/ai-agents',
     icon: '◎',
   },
   {
     title: 'Models & Inference',
     description: 'Cloud providers, local Ollama models, enterprise OpenShift AI, and semantic routing.',
-    href: '/docs/models-and-inference',
+    href: '/models-and-inference',
     icon: '◇',
   },
 ];
@@ -63,13 +63,13 @@ const organizing: DocCardProps[] = [
   {
     title: 'Projects',
     description: 'Save credentials, network rules, and skills as a project so every workspace inherits them.',
-    href: '/docs/projects',
+    href: '/projects',
     icon: '▣',
   },
   {
     title: 'Skills, MCP & Knowledge',
     description: 'Give agents domain skills, live tool access via MCP servers, and retrieval over your docs.',
-    href: '/docs/skills-mcp-knowledge',
+    href: '/skills-mcp-knowledge',
     icon: '▤',
   },
 ];
@@ -78,13 +78,13 @@ const security: DocCardProps[] = [
   {
     title: 'Network Security',
     description: 'Deny-by-default network policy, reading blocked events, and live policy updates.',
-    href: '/docs/network-security',
+    href: '/network-security',
     icon: '◆',
   },
   {
     title: 'Settings',
     description: 'OpenShell runtime, CLI tools, experimental features, and the status bar reference.',
-    href: '/docs/settings',
+    href: '/settings',
     icon: '◈',
   },
 ];
@@ -103,10 +103,10 @@ export default function Home(): ReactNode {
             you've shared, and call the models you've configured.
           </p>
           <div className={styles.heroActions}>
-            <Link to="/docs/what-is-kaiden" className={styles.primaryButton}>
+            <Link to="/what-is-kaiden" className={styles.primaryButton}>
               Get started
             </Link>
-            <Link to="/docs/your-first-sandbox" className={styles.secondaryButton}>
+            <Link to="/your-first-sandbox" className={styles.secondaryButton}>
               First sandbox →
             </Link>
           </div>

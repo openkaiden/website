@@ -11,8 +11,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://docs.openkaiden.ai',
-  baseUrl: '/',
+  url: 'https://openkaiden.ai',
+  baseUrl: '/docs/',
 
   organizationName: 'openkaiden',
   projectName: 'kaiden-docs',
@@ -32,7 +32,7 @@ const config: Config = {
         docs: {
           path: './content',
           sidebarPath: './sidebars.ts',
-          routeBasePath: 'docs',
+          routeBasePath: '/',
           showLastUpdateTime: false,
           breadcrumbs: true,
         },
@@ -86,9 +86,9 @@ const config: Config = {
         {
           title: 'Documentation',
           items: [
-            {label: 'What is Kaiden?', to: '/docs/what-is-kaiden'},
-            {label: 'Your First Sandbox', to: '/docs/your-first-sandbox'},
-            {label: 'Network Security', to: '/docs/network-security'},
+            {label: 'What is Kaiden?', to: '/what-is-kaiden'},
+            {label: 'Your First Sandbox', to: '/your-first-sandbox'},
+            {label: 'Network Security', to: '/network-security'},
           ],
         },
         {
