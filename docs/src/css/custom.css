@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar__brand {
-  gap: 0;
+  gap: 10px;
 }
 
 .navbar__title {
@@ -190,10 +190,6 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme='dark'] .navbar__title {
   color: #e8eef7;
-}
-
-.navbar__brand {
-  gap: 10px;
 }
 
 .navbar__link {

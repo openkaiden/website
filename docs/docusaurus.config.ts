@@ -53,6 +53,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
+      title: 'kaiden',
       logo: {
         alt: 'Kaiden',
         src: 'img/icon.png',
@@ -63,21 +64,15 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
-          position: 'left',
-          label: 'Docs',
+          href: 'https://github.com/openkaiden/kaiden',
+          position: 'right',
+          className: 'navbar-github-link',
+          'aria-label': 'GitHub',
         },
         {
           href: '/',
           position: 'right',
           label: 'Website',
-        },
-        {
-          href: 'https://github.com/openkaiden/kaiden',
-          position: 'right',
-          className: 'navbar-github-link',
-          'aria-label': 'GitHub',
         },
       ],
       hideOnScroll: false,
