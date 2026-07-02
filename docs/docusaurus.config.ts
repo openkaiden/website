@@ -54,7 +54,7 @@ const config: Config = {
       logo: {
         alt: 'Kaiden',
         src: 'img/icon.png',
-        href: 'https://openkaiden.ai',
+        href: '/',
         width: 32,
         height: 32,
         style: { borderRadius: '22%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' },
@@ -67,7 +67,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://openkaiden.ai',
+          href: '/',
           position: 'right',
           label: 'Website',
         },
