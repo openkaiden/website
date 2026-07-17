@@ -45,12 +45,19 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'network-security',
-        'openshell-gateways',
       ],
     },
     {
       type: 'category',
       label: 'Reference',
+      collapsed: false,
+      items: [
+        'openshell-gateways',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Settings',
       collapsed: false,
       items: [
         'settings',
