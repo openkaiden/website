@@ -69,7 +69,7 @@ The sandbox runtime underneath Kaiden is [OpenShell](https://github.com/NVIDIA/O
 
 Kaiden is an active contributor to the OpenShell project. Features developed for Kaiden — including provider management, sandbox image tooling, and policy primitives — flow back upstream. Running Kaiden means you benefit from the combined investment of the Kaiden and OpenShell communities.
 
-### Repositories
+## Repositories
 
 The Kaiden project lives in the [openkaiden](https://github.com/openkaiden) GitHub organization. The two primary repositories:
 
@@ -99,16 +99,3 @@ Project  →  Sandbox  →  Session
 | Purpose | Config and defaults | Isolated runtime | One agent task |
 | Where | Projects | Sandboxes | Work |
 
----
-
-## Status bar
-
-The bar at the bottom of every screen shows live state:
-
-```
-Ready | Sandbox active | ● OpenShell ▾ | OpenShift AI: Not connected
-```
-
-- **Sandbox active** — at least one sandbox is running
-- **● OpenShell** — gateway status: green = running, amber = starting, red = stopped. Click to see driver, uptime, and controls.
-- **OpenShift AI** — enterprise model cluster connection status
