@@ -79,8 +79,6 @@ The Kaiden project lives in the [openkaiden](https://github.com/openkaiden) GitH
 
 **[openkaiden/openshell-image-builder](https://github.com/openkaiden/openshell-image-builder)** — a CLI for building custom sandbox images based on your Kaiden workspace configuration. Use it when the default sandbox images don't include a tool or runtime your agent needs.
 
-Supporting repositories include [`kdn`](https://github.com/openkaiden/kdn) (the Go CLI that translates Kaiden configuration into OpenShell sandbox operations), [`kdn-api`](https://github.com/openkaiden/kdn-api) (shared API definitions), and [`catalog`](https://github.com/openkaiden/catalog) (the extensions and skills registry).
-
 ---
 
 ## How it's structured
