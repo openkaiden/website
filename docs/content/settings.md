@@ -5,117 +5,102 @@ sidebar_label: Settings
 sidebar_position: 9
 ---
 
-Settings is accessible from the gear icon at the bottom of the left navigation bar. It has four sections: **Resources**, **Proxy**, **CLI Tools**, and **Preferences**.
+The Settings section covers three areas: **OpenShell** (sandbox runtime), **CLI Tools**, and general preferences.
 
 ---
 
-## Resources
+## OpenShell
 
-The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new …** button to configure it for the first time.
+OpenShell is a primary section in the settings left nav — at the same level as Connections and Preferences — with five sub-sections covering every aspect of the runtime.
 
-Provider extensions available:
+### Gateway
 
-| Provider | What it connects to |
-|---|---|
-| **Vertex AI** | Google Cloud Vertex AI |
-| **RamaLama** | Local RamaLama inference server |
-| **OpenShift AI** | Red Hat OpenShift AI cluster |
-| **OpenAI** | OpenAI API (or any OpenAI-compatible endpoint) |
-| **Ollama** | Local Ollama inference server |
-| **Mistral** | Mistral AI API |
-| **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
-| **Docling** | Docling document parser (used by Knowledges) |
-| **Container** | Container registry for sandbox images |
-| **Claude** | Anthropic Claude API |
+OpenShell supports multiple registered gateways. You can switch between a local gateway (running on your machine) and one or more remote gateways (team or enterprise deployments). The **active gateway** handles all sandbox operations.
 
-Configured connections appear alongside the provider card with a delete icon. To manage the full detail of an extension — including API keys, base URLs, and model selection — click through to **Extensions** in the main navigation.
+#### Registered gateways
 
----
+A list of all registered gateways with their endpoint URL, type, and connection status:
 
-## Proxy
+- **Active** (green) — the gateway currently in use. All sandbox create/stop/policy operations go here.
+- **Connected** — reachable, not currently selected. Click **Select** to make it active.
+- **Disconnected** — unreachable. Click **Connect** to retry.
 
-Proxy settings apply to outbound traffic from Kaiden itself (not from sandboxes — sandbox network policy is set per project).
+Click **+ Add gateway** to register a new one. You'll provide a name, endpoint URL, and authentication method:
+- **Local** — same machine, no auth needed
+- **Remote** — network gateway, can use OIDC (team SSO) or mTLS (machine-to-machine)
 
-- **Proxy configuration** — shows the current proxy source. The default value is `System`, meaning Kaiden reads the OS proxy settings.
-- **Web Proxy (HTTP)** — override the HTTP proxy URL (e.g. `http://myproxy.domain.com:8080`). Leave blank to use the system value.
-- **Secure Web Proxy (HTTPS)** — override the HTTPS proxy URL. Leave blank to use the system value.
-- **Bypass proxy settings for these hosts and domains** — comma-separated hostnames and CIDR ranges that skip the proxy (default: `local,169.254/16`).
+#### Active gateway status
 
-Click **Update** to apply changes.
+Shows the live state of the currently selected gateway: Running/Stopped, uptime, version, active sandbox count, and a link to view security logs.
+
+**Restart / Stop** — lifecycle controls for the active gateway. For remote gateways these trigger the remote process; for local, they control the background service on your machine.
+
+#### Driver
+
+How sandboxes are isolated on the active gateway. Applies to all new sandboxes — existing sandboxes keep their driver until recreated.
+
+- **Podman** (recommended) — container-based isolation. Faster startup, lower overhead.
+- **MicroVM** — VM-based isolation. Hardware-level separation, slower startup. For regulated environments or untrusted code.
+
+#### Startup
+
+**Auto-start gateway** — when on (default), Kaiden starts the local gateway automatically at launch. Remote gateways are always-on and unaffected by this setting.
+
+**Gateway port** — the local port the gateway listens on (default 17670). Change only if there is a conflict.
+
+### Sandboxes
+
+Default behaviour applied to every new sandbox, overridable at project or sandbox level.
+
+**Default network mode** — toggle between "Allow known services" (credentials determine reachable hosts) and strict mode (explicit allowlist only).
+
+**Filesystem isolation mode** — `Best effort` (degrades gracefully on older kernels) or `Strict` (fails if isolation cannot be guaranteed).
+
+**Keep sandbox after session ends** — when on, sandboxes persist after an agent session completes so you can reconnect or start a new session without recreating the environment.
+
+**Process identity** — the Unix user the agent runs as inside the sandbox (default: `sandbox`).
+
+### Providers
+
+Shows all credentials from the Secret Vault mirrored as OpenShell providers (`kdn-<name>`). Status column: Synced, Pending, or Expired. Credentials are injected as environment variables at sandbox start — the agent never touches API keys directly.
+
+**Auto-attach providers** — when on, providers matching the project's credentials are attached automatically at sandbox creation.
+
+### Inference
+
+Controls where agent model calls go. The agent calls `inference.local`; OpenShell intercepts and routes to the configured backend.
+
+Options:
+- **Direct** — straight to a cloud provider (Anthropic API, etc.) using the synced credential
+- **Semantic router** — routes through a configured router for cost optimisation or data residency
+
+The intercepted paths (`POST /v1/chat/completions`, `POST /v1/messages`, `POST /v1/responses`) are shown for reference.
+
+### Logs
+
+Security event stream from all sandboxes in OCSF v1.7.0 format.
+
+**Recent events table** — shows Time, Action (ALLOW/DENY), Event description, and Sandbox. Filterable by sandbox.
+
+**Minimum severity** — filter from Informational (all events) up to Critical (only process kills and security violations).
+
+**OCSF export sink** — stream events to an external URL (SIEM, log aggregator). Leave blank to disable.
 
 ---
 
 ## CLI Tools
 
-Shows the OpenShell binaries bundled with Kaiden and their versions.
+The CLI Tools tab shows the backend command-line tools Kaiden uses and their current versions:
 
-| Binary | Description |
-|---|---|
-| **openshell** | OpenShell CLI for managing sandboxed workspaces |
-| **openshell-image-builder** | CLI for building custom container images for OpenShell sandboxes |
-| **openshell-gateway** | OpenShell Gateway server for managing sandbox connections |
+```
+kdn         v0.9.2   [Update]
+OpenShell   v2.1.0   [Update]
+```
 
-Each entry shows the detected version and a delete icon. The bundled binaries are updated with Kaiden releases. To use a custom build, configure a custom path under **Preferences → Extension: OpenShell**.
+**kdn** — Kaiden's own CLI that orchestrates workspace creation, configuration merging, and agent lifecycle. It's the intermediary between the Kaiden UI and the OpenShell runtime.
 
----
+**OpenShell** — NVIDIA's sandbox runtime CLI. OpenShell manages the actual secured containers, network policies, provider credentials, and security event logging.
 
-## Preferences
+Both tools are downloaded and managed by Kaiden. The **Update** button checks for a newer version and installs it. Updates to OpenShell may add new sandbox capabilities (new isolation modes, new policy options, new provider types) that become available in the UI automatically.
 
-Preferences has a search field and a set of sub-sections accessible from the left sub-navigation:
-
-### Agent Workspace
-
-- **Runtime** — override the container runtime used when creating agent workspaces.
-- **Default Base Image** — default sandbox image used when the agent does not request a specific one.
-
-### Appearance
-
-- **Appearance** — choose between light mode, dark mode, or system setting.
-- **Zoom Level** — adjust UI zoom. Positive values zoom in (e.g. `1` = 20% larger), negative values zoom out. Accepts decimals for fine control.
-- **Navigation Bar Layout** — show icon and label, or icon only, in the navigation bar.
-
-### Chat
-
-- **Show Chat Window** — show or hide the chat panel.
-- **Max Attachment File Size** — maximum size in MB for file attachments in chat.
-
-### Editor
-
-Settings for the built-in code editor.
-
-### Exit On Close
-
-Controls whether Kaiden quits or minimises when the window is closed.
-
-### Extension: OpenShell
-
-Custom binary paths for the OpenShell toolchain. Leave blank to use the bundled versions shown in CLI Tools.
-
-- **Path** — custom path to the `openshell` binary.
-- **Path** — custom path to the `openshell-image-builder` binary.
-- **Path** — custom path to the `openshell-gateway` binary.
-- **Resolution** — the binary resolution order: a custom path set here is always checked first before the bundled binary, regardless of other settings.
-
-### Extensions
-
-Settings that apply across all installed extensions.
-
-### Feedback dialog
-
-- **Dialog** — whether to show the feedback dialog when using experimental features.
-
-### Kubernetes
-
-Kubernetes cluster connection settings.
-
-### Minimize on login / Start on login
-
-Controls whether Kaiden launches at login and whether it starts minimised.
-
-### Onboarding
-
-Re-run or reset the onboarding flow.
-
-### Tasks
-
-Background task settings.
+You shouldn't need to interact with these CLIs directly. They're shown here for transparency — you can see exactly which version of each tool is in use, which matters when reporting bugs or following security advisories.

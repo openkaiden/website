@@ -7,6 +7,8 @@ sidebar_position: 1
 
 Kaiden is an open-source tool for managing agentic coding environments. Instead of giving autonomous agents unrestricted access to your machine, Kaiden wraps your preferred coding agents — Claude Code, Goose, Cursor, and others — in isolated Podman or MicroVM sandboxes.
 
+![Kaiden overview dashboard](assets/overview.png)
+
 ---
 
 ## Security: Bound the damage radius

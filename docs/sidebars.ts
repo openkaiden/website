@@ -45,7 +45,6 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'network-security',
-        'openshell-gateways',
       ],
     },
     {
