@@ -36,7 +36,7 @@
             class="w-1.5 h-1.5 rounded-full animate-pulse"
             style="background: var(--accent)"
           ></span>
-          From the Podman Desktop Team · Open source · Apache 2.0
+          From the Podman Desktop Team &middot; Open source &middot; Apache 2.0
         </div>
 
         <h1
@@ -85,8 +85,8 @@
 
         <div class="mt-5 flex flex-col gap-2">
           <p class="text-xs" style="color: var(--text-muted)">
-            macOS · Linux · Windows — free, open source
-            {#if $downloadStore?.version}&nbsp;·&nbsp;{$downloadStore.version}{/if}
+            macOS &middot; Linux &middot; Windows &mdash; free, open source
+            {#if $downloadStore?.version}&nbsp;&middot;&nbsp;{$downloadStore.version}{/if}
           </p>
           <div class="flex flex-wrap items-center gap-1.5">
             <span class="text-xs" style="color: var(--text-muted)">Supported Coding Agents : </span>
@@ -121,12 +121,12 @@
               <span class="w-3 h-3 rounded-full bg-red-400"></span>
               <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
               <span class="w-3 h-3 rounded-full bg-green-400"></span>
-              <span class="ml-2 text-[11px] font-mono" style="color: var(--text-muted)">Kaiden — Agentic Coding Workspaces</span>
+              <span class="ml-2 text-[11px] font-mono" style="color: var(--text-muted)">Kaiden &mdash; Agentic Coding Workspaces</span>
             </div>
             <!-- screenshot -->
             <div class="relative">
-              <img src="{assets}/screenshots/coding-workspaces-dark.png" alt="Kaiden — Agentic Coding Workspaces" class="hero-shot-dark w-full block" />
-              <img src="{assets}/screenshots/coding-workspaces-light.png" alt="Kaiden — Agentic Coding Workspaces" class="hero-shot-light w-full block" />
+              <img src="{assets}/screenshots/coding-workspaces-dark.png" alt="Kaiden &mdash; Agentic Coding Workspaces" class="hero-shot-dark w-full block" />
+              <img src="{assets}/screenshots/coding-workspaces-light.png" alt="Kaiden &mdash; Agentic Coding Workspaces" class="hero-shot-light w-full block" />
               <div class="absolute inset-0 pointer-events-none" style="box-shadow: inset 0 0 0 1px var(--border)"></div>
             </div>
           </div>

@@ -28,7 +28,7 @@
           <a href="https://podman.io" target="_blank" rel="noopener noreferrer" class="podman-link">Podman</a>
           and
           <a href="https://github.com/containers/libkrun" target="_blank" rel="noopener noreferrer" class="podman-link">libkrun</a>
-          microVMs — the same stacks trusted by millions of developers, now securing your AI agents.
+          microVMs &mdash; the same stacks trusted by millions of developers, now securing your AI agents.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">

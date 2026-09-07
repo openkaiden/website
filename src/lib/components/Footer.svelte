@@ -34,7 +34,7 @@
         <p class="text-sm leading-relaxed max-w-xs" style="color: var(--text-muted)">
           Open platform for running AI coding agents in isolated sandboxes with enterprise-grade governance.
         </p>
-        <p class="mt-4 text-xs" style="color: var(--text-muted)">Apache 2.0 · openkaiden organization</p>
+        <p class="mt-4 text-xs" style="color: var(--text-muted)">Apache 2.0 &middot; openkaiden organization</p>
       </div>
 
       <!-- link columns -->

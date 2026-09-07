@@ -13,15 +13,15 @@
 </script>
 
 <svelte:head>
-  <title>Kaiden — AI coding agents. Governed, isolated, open.</title>
+  <title>Kaiden &mdash; AI coding agents. Governed, isolated, open.</title>
   <meta name="description" content="Kaiden is the open platform for running AI coding agents in isolated, reproducible sandboxes with enterprise-grade governance. Supports Claude Code, Goose, Cursor, and OpenCode." />
   <meta name="keywords" content="AI agent sandboxing, AI coding agents, enterprise AI governance, MCP workspace, Claude Code sandbox, agentic coding" />
-  <meta property="og:title" content="Kaiden — AI coding agents. Governed, isolated, open." />
+  <meta property="og:title" content="Kaiden &mdash; AI coding agents. Governed, isolated, open." />
   <meta property="og:description" content="Run AI coding agents in isolated sandboxes with enterprise governance. Open source. Supports Claude Code, Goose, Cursor, OpenCode." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{assets}/icon.png" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Kaiden — AI coding agents. Governed, isolated, open." />
+  <meta name="twitter:title" content="Kaiden &mdash; AI coding agents. Governed, isolated, open." />
   <meta name="twitter:image" content="{assets}/icon.png" />
   {@html `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org",

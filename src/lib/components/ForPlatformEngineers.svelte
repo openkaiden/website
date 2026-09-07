@@ -67,15 +67,15 @@
             <div class="space-y-2">
               <div class="flex items-center gap-2">
                 <span class="text-[10px]" style="color: #10b981">✓</span>
-                <span style="color: #94afd4">claude-3.5 — allowed</span>
+                <span style="color: #94afd4">claude-3.5 &mdash; allowed</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="text-[10px]" style="color: #10b981">✓</span>
-                <span style="color: #94afd4">github.com MCP — approved</span>
+                <span style="color: #94afd4">github.com MCP &mdash; approved</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="text-[10px]" style="color: #f87171">✗</span>
-                <span style="color: #4a6070">unknown-registry — blocked</span>
+                <span style="color: #4a6070">unknown-registry &mdash; blocked</span>
               </div>
               <div class="flex items-center gap-2 pt-1 border-t" style="border-color: #ffffff10">
                 <span style="color: #4a6070">skill-set:</span>
@@ -103,7 +103,7 @@
           </div>
           <!-- Kaiden workspace card -->
           <div class="flex-1 rounded-xl border p-3" style="border-color: #ffffff15; background: #ffffff08">
-            <div class="text-[9px] uppercase tracking-widest mb-2.5" style="color: #4a6070">Kaiden — workspace</div>
+            <div class="text-[9px] uppercase tracking-widest mb-2.5" style="color: #4a6070">Kaiden &mdash; workspace</div>
             <div class="space-y-2">
               <div class="flex items-center justify-between">
                 <span style="color: #c8dff5">api-refactor</span>
