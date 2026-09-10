@@ -56,8 +56,8 @@ Hybrid AI routing dynamically shifts workloads between cloud APIs, on-prem, and 
 
 Avoid vendor lock-in. Swap your preferred agents and models without rebuilding your environment.
 
-- **Agents**: Claude Code, Goose, Cursor, Codex, OpenCode, Gemini CLI — each plugs in the same way. Switch agents per project or run multiple in parallel.
-- **Models**: Anthropic, OpenAI, Google AI, Azure OpenAI, Ollama, Ramalama, OpenShift AI — all accessible from the same model picker.
+- **Agents**: Claude Code, Goose, Cursor, Codex, OpenCode, Gemini CLI, GitHub Copilot, OpenClaw — each plugs in the same way. Switch agents per project or run multiple in parallel.
+- **Models**: Anthropic, Cursor, OpenAI, Google AI, Azure OpenAI, Vertex AI, Ollama, Ramalama, OpenShift AI — all accessible from the same model picker.
 - **Runtime**: Podman (fast, container-based) or MicroVM (hardware-level isolation) — switchable per project without changing anything else.
 - **Source**: Kaiden is open source. The full configuration lives in your project directory as plain YAML.
 
@@ -98,4 +98,3 @@ Project  →  Sandbox  →  Session
 | Lifespan | Permanent | Persistent | Ephemeral |
 | Purpose | Config and defaults | Isolated runtime | One agent task |
 | Where | Projects | Sandboxes | Work |
-
