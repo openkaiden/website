@@ -11,7 +11,7 @@ Settings is accessible from the gear icon at the bottom of the left navigation b
 
 ## Resources
 
-The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new …** button to configure it for the first time.
+The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new ...** button to configure it for the first time.
 
 Provider extensions available:
 
@@ -24,7 +24,9 @@ Provider extensions available:
 | **Ollama** | Local Ollama inference server |
 | **Mistral** | Mistral AI API |
 | **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
+| **Gemini** | Google Gemini API |
 | **Docling** | Docling document parser (used by Knowledges) |
+| **Cursor** | Cursor AI API |
 | **Container** | Container registry for sandbox images |
 | **Claude** | Anthropic Claude API |
 
@@ -79,6 +81,10 @@ Preferences has a search field and a set of sub-sections accessible from the lef
 - **Show Chat Window** — show or hide the chat panel.
 - **Max Attachment File Size** — maximum size in MB for file attachments in chat.
 
+### Docker Compatibility
+
+Settings for Docker CLI compatibility mode. Controls whether Kaiden maps Docker CLI commands to the Podman runtime.
+
 ### Editor
 
 Settings for the built-in code editor.
@@ -94,7 +100,9 @@ Custom binary paths for the OpenShell toolchain. Leave blank to use the bundled 
 - **Path** — custom path to the `openshell` binary.
 - **Path** — custom path to the `openshell-image-builder` binary.
 - **Path** — custom path to the `openshell-gateway` binary.
+- **Path** — custom path to the MXC `wxc-exec` binary.
 - **Resolution** — the binary resolution order: a custom path set here is always checked first before the bundled binary, regardless of other settings.
+- **Gateway Poll Interval** — interval in seconds between OpenShell gateway state checks.
 
 ### Extensions
 
@@ -108,6 +116,10 @@ Settings that apply across all installed extensions.
 
 Kubernetes cluster connection settings.
 
+### MCP
+
+Configuration for Model Context Protocol servers and registries.
+
 ### Minimize on login / Start on login
 
 Controls whether Kaiden launches at login and whether it starts minimised.
@@ -116,6 +128,34 @@ Controls whether Kaiden launches at login and whether it starts minimised.
 
 Re-run or reset the onboarding flow.
 
+### Registries
+
+Container registry configuration for pulling sandbox images.
+
+### Skills
+
+Agent skill management settings — configure default skills and skill discovery paths.
+
 ### Tasks
 
 Background task settings.
+
+### Telemetry
+
+Controls whether anonymous usage data is collected. Telemetry can be fully disabled from this section.
+
+### Terminal
+
+Terminal appearance and behavior settings, including font size and shell configuration.
+
+### Tray Icon Color
+
+Customize the color of the Kaiden icon in the system tray.
+
+### User Confirmation
+
+Controls whether confirmation dialogs appear before destructive actions such as deleting sandboxes or removing credentials.
+
+### Window
+
+Window position and size persistence. When enabled, Kaiden remembers where you placed the window and restores it on next launch.

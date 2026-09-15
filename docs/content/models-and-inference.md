@@ -11,7 +11,7 @@ Kaiden provides ready-to-use integrations for all major model providers. Adding 
 
 The Models section covers four areas:
 
-- **LLM Providers** — cloud APIs (Claude, Mistral, Gemini, Vertex AI, OpenAI-compatible endpoints)
+- **LLM Providers** — cloud APIs (Claude, Cursor, Mistral, Gemini, Vertex AI, OpenAI-compatible endpoints)
 - **Local** — models running on your machine via Ollama or RamaLama
 - **In-house** — models hosted on an enterprise OpenShift AI cluster
 - **Semantic Routers** — smart routing rules that direct requests to the right model based on content
@@ -29,6 +29,7 @@ Kaiden ships with extensions for the following cloud providers:
 | Provider | Type | Notes |
 |---|---|---|
 | **Claude** | Cloud | Anthropic API. Supports custom base URLs. |
+| **Cursor** | Cloud | Cursor API. Provides access to models through the Cursor platform. |
 | **Mistral** | Cloud | Mistral API. |
 | **Gemini** | Cloud | Google Gemini API. |
 | **Vertex AI** | Cloud | Google Cloud — runs Anthropic Claude models (claude-opus-4, claude-sonnet-4, claude-haiku-4) on your GCP project. Authenticates via Application Default Credentials. |
