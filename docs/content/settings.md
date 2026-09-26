@@ -11,7 +11,7 @@ Settings is accessible from the gear icon at the bottom of the left navigation b
 
 ## Resources
 
-The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new …** button to configure it for the first time.
+The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new ...** button to configure it for the first time.
 
 Provider extensions available:
 
@@ -20,12 +20,13 @@ Provider extensions available:
 | **Vertex AI** | Google Cloud Vertex AI |
 | **RamaLama** | Local RamaLama inference server |
 | **OpenShift AI** | Red Hat OpenShift AI cluster |
-| **OpenAI** | OpenAI API (or any OpenAI-compatible endpoint) |
+| **OpenAI Compatible** | OpenAI API (or any OpenAI-compatible endpoint) |
 | **Ollama** | Local Ollama inference server |
 | **Mistral** | Mistral AI API |
 | **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
+| **Gemini** | Google Gemini API |
 | **Docling** | Docling document parser (used by Knowledges) |
-| **Container** | Container registry for sandbox images |
+| **Cursor** | Cursor model API |
 | **Claude** | Anthropic Claude API |
 
 Configured connections appear alongside the provider card with a delete icon. To manage the full detail of an extension — including API keys, base URLs, and model selection — click through to **Extensions** in the main navigation.
@@ -63,6 +64,10 @@ Each entry shows the detected version and a delete icon. The bundled binaries ar
 
 Preferences has a search field and a set of sub-sections accessible from the left sub-navigation:
 
+### ACP Sessions
+
+Agent Communication Protocol (ACP) session settings.
+
 ### Agent Workspace
 
 - **Runtime** — override the container runtime used when creating agent workspaces.
@@ -79,6 +84,10 @@ Preferences has a search field and a set of sub-sections accessible from the lef
 - **Show Chat Window** — show or hide the chat panel.
 - **Max Attachment File Size** — maximum size in MB for file attachments in chat.
 
+### Docker Compatibility
+
+Docker socket compatibility options. Enable when using Docker-based tooling alongside Podman.
+
 ### Editor
 
 Settings for the built-in code editor.
@@ -94,7 +103,9 @@ Custom binary paths for the OpenShell toolchain. Leave blank to use the bundled 
 - **Path** — custom path to the `openshell` binary.
 - **Path** — custom path to the `openshell-image-builder` binary.
 - **Path** — custom path to the `openshell-gateway` binary.
+- **Path** — custom path to the MXC `wxc-exec` binary.
 - **Resolution** — the binary resolution order: a custom path set here is always checked first before the bundled binary, regardless of other settings.
+- **Gateway Poll Interval** — interval in seconds between OpenShell gateway state checks.
 
 ### Extensions
 
@@ -108,6 +119,10 @@ Settings that apply across all installed extensions.
 
 Kubernetes cluster connection settings.
 
+### MCP
+
+MCP (Model Context Protocol) server registry management.
+
 ### Minimize on login / Start on login
 
 Controls whether Kaiden launches at login and whether it starts minimised.
@@ -116,6 +131,34 @@ Controls whether Kaiden launches at login and whether it starts minimised.
 
 Re-run or reset the onboarding flow.
 
+### Registries
+
+Container image registry settings.
+
+### Skills
+
+Skill management and defaults.
+
 ### Tasks
 
 Background task settings.
+
+### Telemetry
+
+Control whether Kaiden collects anonymous usage data.
+
+### Terminal
+
+Built-in terminal configuration.
+
+### Tray Icon Color
+
+System tray icon color selection.
+
+### User Confirmation
+
+Control when Kaiden shows confirmation dialogs for destructive actions.
+
+### Window
+
+Window position and size persistence across restarts.

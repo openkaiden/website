@@ -90,7 +90,7 @@
           </p>
           <div class="flex flex-wrap items-center gap-1.5">
             <span class="text-xs" style="color: var(--text-muted)">Supported Coding Agents : </span>
-            {#each ['Claude Code', 'Goose', 'Cursor', 'OpenCode'] as agent}
+            {#each ['Claude Code', 'Goose', 'Cursor', 'GitHub Copilot', 'Codex', 'OpenCode', 'OpenClaw', 'Gemini CLI'] as agent}
               <span
                 class="text-xs px-2 py-0.5 rounded border font-mono"
                 style="border-color: var(--border); color: var(--text-secondary); background: var(--bg-subtle)"
@@ -100,7 +100,7 @@
           <div class="flex flex-wrap items-center gap-1.5">
 
             <span class="text-xs" style="color: var(--text-muted)">Supports</span>
-              {#each ['Ramalama', 'Ollama','Gemini', 'Mistral', 'Anthropic', 'OpenAI', 'OpenShift AI'] as modelprovider}
+              {#each ['Ramalama', 'Ollama', 'Gemini', 'Mistral', 'Anthropic', 'OpenAI', 'Vertex AI', 'OpenShift AI'] as modelprovider}
                 <span
                   class="text-xs px-2 py-0.5 rounded border font-mono"
                   style="border-color: var(--border); color: var(--text-secondary); background: var(--bg-subtle)"
