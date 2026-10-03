@@ -11,7 +11,7 @@ Settings is accessible from the gear icon at the bottom of the left navigation b
 
 ## Resources
 
-The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new …** button to configure it for the first time.
+The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new ...** button to configure it for the first time.
 
 Provider extensions available:
 
@@ -24,7 +24,9 @@ Provider extensions available:
 | **Ollama** | Local Ollama inference server |
 | **Mistral** | Mistral AI API |
 | **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
+| **Gemini** | Google Gemini API |
 | **Docling** | Docling document parser (used by Knowledges) |
+| **Cursor** | Cursor API |
 | **Container** | Container registry for sandbox images |
 | **Claude** | Anthropic Claude API |
 
@@ -63,6 +65,10 @@ Each entry shows the detected version and a delete icon. The bundled binaries ar
 
 Preferences has a search field and a set of sub-sections accessible from the left sub-navigation:
 
+### ACP Sessions
+
+Agent Communication Protocol session settings.
+
 ### Agent Workspace
 
 - **Runtime** — override the container runtime used when creating agent workspaces.
@@ -79,6 +85,10 @@ Preferences has a search field and a set of sub-sections accessible from the lef
 - **Show Chat Window** — show or hide the chat panel.
 - **Max Attachment File Size** — maximum size in MB for file attachments in chat.
 
+### Docker Compatibility
+
+Docker API compatibility mode settings.
+
 ### Editor
 
 Settings for the built-in code editor.
@@ -94,7 +104,9 @@ Custom binary paths for the OpenShell toolchain. Leave blank to use the bundled 
 - **Path** — custom path to the `openshell` binary.
 - **Path** — custom path to the `openshell-image-builder` binary.
 - **Path** — custom path to the `openshell-gateway` binary.
+- **Path** — custom path to the MXC `wxc-exec` binary.
 - **Resolution** — the binary resolution order: a custom path set here is always checked first before the bundled binary, regardless of other settings.
+- **Gateway Poll Interval** — interval in seconds between OpenShell gateway state checks.
 
 ### Extensions
 
@@ -108,6 +120,10 @@ Settings that apply across all installed extensions.
 
 Kubernetes cluster connection settings.
 
+### MCP
+
+MCP server and registry configuration.
+
 ### Minimize on login / Start on login
 
 Controls whether Kaiden launches at login and whether it starts minimised.
@@ -116,6 +132,34 @@ Controls whether Kaiden launches at login and whether it starts minimised.
 
 Re-run or reset the onboarding flow.
 
+### Registries
+
+Container registry connection settings.
+
+### Skills
+
+Skill library location and management.
+
 ### Tasks
 
 Background task settings.
+
+### Telemetry
+
+Controls whether Kaiden collects anonymised usage data.
+
+### Terminal
+
+Terminal emulator settings.
+
+### Tray Icon Color
+
+Customise the system tray icon colour.
+
+### User Confirmation
+
+Controls whether Kaiden shows confirmation dialogs for certain actions.
+
+### Window
+
+Controls whether Kaiden remembers the window position and size between sessions.
