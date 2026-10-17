@@ -11,22 +11,24 @@ Settings is accessible from the gear icon at the bottom of the left navigation b
 
 ## Resources
 
-The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new …** button to configure it for the first time.
+The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new ...** button to configure it for the first time.
 
 Provider extensions available:
 
 | Provider | What it connects to |
 |---|---|
-| **Vertex AI** | Google Cloud Vertex AI |
-| **RamaLama** | Local RamaLama inference server |
-| **OpenShift AI** | Red Hat OpenShift AI cluster |
-| **OpenAI** | OpenAI API (or any OpenAI-compatible endpoint) |
-| **Ollama** | Local Ollama inference server |
-| **Mistral** | Mistral AI API |
-| **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
-| **Docling** | Docling document parser (used by Knowledges) |
-| **Container** | Container registry for sandbox images |
 | **Claude** | Anthropic Claude API |
+| **Container** | Container registry for sandbox images |
+| **Cursor** | Cursor API |
+| **Docling** | Docling document parser (used by Knowledges) |
+| **Gemini** | Google Gemini API |
+| **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
+| **Mistral** | Mistral AI API |
+| **Ollama** | Local Ollama inference server |
+| **OpenAI** | OpenAI API (or any OpenAI-compatible endpoint) |
+| **OpenShift AI** | Red Hat OpenShift AI cluster |
+| **RamaLama** | Local RamaLama inference server |
+| **Vertex AI** | Google Cloud Vertex AI |
 
 Configured connections appear alongside the provider card with a delete icon. To manage the full detail of an extension — including API keys, base URLs, and model selection — click through to **Extensions** in the main navigation.
 
@@ -63,6 +65,10 @@ Each entry shows the detected version and a delete icon. The bundled binaries ar
 
 Preferences has a search field and a set of sub-sections accessible from the left sub-navigation:
 
+### ACP Sessions
+
+ACP (Agent Communication Protocol) session management settings.
+
 ### Agent Workspace
 
 - **Runtime** — override the container runtime used when creating agent workspaces.
@@ -79,6 +85,10 @@ Preferences has a search field and a set of sub-sections accessible from the lef
 - **Show Chat Window** — show or hide the chat panel.
 - **Max Attachment File Size** — maximum size in MB for file attachments in chat.
 
+### Docker Compatibility
+
+Settings for Docker compatibility mode.
+
 ### Editor
 
 Settings for the built-in code editor.
@@ -94,7 +104,9 @@ Custom binary paths for the OpenShell toolchain. Leave blank to use the bundled 
 - **Path** — custom path to the `openshell` binary.
 - **Path** — custom path to the `openshell-image-builder` binary.
 - **Path** — custom path to the `openshell-gateway` binary.
+- **Path** — custom path to the MXC `wxc-exec` binary.
 - **Resolution** — the binary resolution order: a custom path set here is always checked first before the bundled binary, regardless of other settings.
+- **Poll Interval** — interval in seconds between OpenShell gateway state checks.
 
 ### Extensions
 
@@ -108,6 +120,10 @@ Settings that apply across all installed extensions.
 
 Kubernetes cluster connection settings.
 
+### MCP
+
+MCP server and registry configuration.
+
 ### Minimize on login / Start on login
 
 Controls whether Kaiden launches at login and whether it starts minimised.
@@ -116,6 +132,34 @@ Controls whether Kaiden launches at login and whether it starts minimised.
 
 Re-run or reset the onboarding flow.
 
+### Registries
+
+Container registry configuration.
+
+### Skills
+
+Skills directory and management settings.
+
 ### Tasks
 
 Background task settings.
+
+### Telemetry
+
+Controls whether anonymous usage data is collected.
+
+### Terminal
+
+Terminal emulator appearance and behavior settings.
+
+### Tray Icon Color
+
+Customize the system tray icon color.
+
+### User Confirmation
+
+Settings for user confirmation dialogs.
+
+### Window
+
+Remember window position and size between sessions.
