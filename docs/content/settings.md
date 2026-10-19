@@ -11,7 +11,7 @@ Settings is accessible from the gear icon at the bottom of the left navigation b
 
 ## Resources
 
-The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new …** button to configure it for the first time.
+The Resources page lists every AI provider extension that is installed. Each provider appears as a card. The right column of each card shows the named connections that have already been configured for that provider, or a **Create new ...** button to configure it for the first time.
 
 Provider extensions available:
 
@@ -24,7 +24,9 @@ Provider extensions available:
 | **Ollama** | Local Ollama inference server |
 | **Mistral** | Mistral AI API |
 | **Milvus** | Milvus / Zilliz vector database (used by Knowledges) |
+| **Gemini** | Google Gemini API |
 | **Docling** | Docling document parser (used by Knowledges) |
+| **Cursor** | Cursor API |
 | **Container** | Container registry for sandbox images |
 | **Claude** | Anthropic Claude API |
 
@@ -37,7 +39,7 @@ Configured connections appear alongside the provider card with a delete icon. To
 Proxy settings apply to outbound traffic from Kaiden itself (not from sandboxes — sandbox network policy is set per project).
 
 - **Proxy configuration** — shows the current proxy source. The default value is `System`, meaning Kaiden reads the OS proxy settings.
-- **Web Proxy (HTTP)** — override the HTTP proxy URL (e.g. `http://myproxy.domain.com:8080`). Leave blank to use the system value.
+- **Web Proxy (HTTP)** — override the HTTP proxy URL. Leave blank to use the system value.
 - **Secure Web Proxy (HTTPS)** — override the HTTPS proxy URL. Leave blank to use the system value.
 - **Bypass proxy settings for these hosts and domains** — comma-separated hostnames and CIDR ranges that skip the proxy (default: `local,169.254/16`).
 
@@ -63,6 +65,10 @@ Each entry shows the detected version and a delete icon. The bundled binaries ar
 
 Preferences has a search field and a set of sub-sections accessible from the left sub-navigation:
 
+### ACP Sessions
+
+Settings for ACP (Agent Communication Protocol) session management.
+
 ### Agent Workspace
 
 - **Runtime** — override the container runtime used when creating agent workspaces.
@@ -79,6 +85,10 @@ Preferences has a search field and a set of sub-sections accessible from the lef
 - **Show Chat Window** — show or hide the chat panel.
 - **Max Attachment File Size** — maximum size in MB for file attachments in chat.
 
+### Docker Compatibility
+
+Settings for Docker compatibility mode. Enables Kaiden to work with Docker-based workflows alongside Podman.
+
 ### Editor
 
 Settings for the built-in code editor.
@@ -94,7 +104,9 @@ Custom binary paths for the OpenShell toolchain. Leave blank to use the bundled 
 - **Path** — custom path to the `openshell` binary.
 - **Path** — custom path to the `openshell-image-builder` binary.
 - **Path** — custom path to the `openshell-gateway` binary.
+- **Path** — custom path to the MXC `wxc-exec` binary.
 - **Resolution** — the binary resolution order: a custom path set here is always checked first before the bundled binary, regardless of other settings.
+- **Gateway poll interval** — interval in seconds between OpenShell gateway state checks.
 
 ### Extensions
 
@@ -108,6 +120,10 @@ Settings that apply across all installed extensions.
 
 Kubernetes cluster connection settings.
 
+### MCP
+
+Settings for Model Context Protocol (MCP) server registries and configuration.
+
 ### Minimize on login / Start on login
 
 Controls whether Kaiden launches at login and whether it starts minimised.
@@ -116,6 +132,34 @@ Controls whether Kaiden launches at login and whether it starts minimised.
 
 Re-run or reset the onboarding flow.
 
+### Registries
+
+Settings for container image registries used when pulling sandbox images.
+
+### Skills
+
+Settings for managing agent skills and skill discovery paths.
+
 ### Tasks
 
 Background task settings.
+
+### Telemetry
+
+Controls whether Kaiden collects anonymous usage telemetry. Telemetry can be opted out of entirely from this section.
+
+### Terminal
+
+Settings for the built-in terminal emulator, including font size and shell configuration.
+
+### Tray Icon Color
+
+Customize the color of the Kaiden system tray icon.
+
+### User Confirmation
+
+Controls whether confirmation dialogs are shown before potentially destructive actions.
+
+### Window
+
+Settings for remembering the window size and position between sessions.
