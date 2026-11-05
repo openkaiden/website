@@ -34,11 +34,13 @@
           class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border text-xs font-mono"
           style="border-color: var(--border); background: var(--bg-card); color: var(--text-muted)"
         >
+          <!-- currentColor picks up .nvidia-green, so the dot matches the OpenShell
+               wordmark exactly in both themes -->
           <span
-            class="w-1.5 h-1.5 rounded-full animate-pulse"
-            style="background: var(--accent)"
+            class="w-1.5 h-1.5 rounded-full animate-pulse nvidia-green"
+            style="background: currentColor"
           ></span>
-          Built on top of <span class="nvidia-green">OpenShell</span> &middot; Open source &middot; Apache 2.0
+          Built on <span class="nvidia-green">OpenShell</span> &middot; Open source &middot; Apache 2.0
         </div>
 
         <h1
