@@ -3,7 +3,7 @@
     {
       n: '01',
       title: 'Isolated sandboxes',
-      body: 'Each agent session runs in its own container powered by Podman or in a microVM powered by libkrun. Hardware-isolated from your host, reproducible, and ephemeral by default.',
+      body: 'Each agent session runs in its own OpenShell sandbox — a Podman container, or a libkrun microVM with a kernel of its own when you need a VM boundary. The agent runs non-root, confined to declared paths, with deny-by-default egress.',
       icon: `<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>`
     },
     {

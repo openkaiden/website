@@ -34,6 +34,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* NVIDIA brand green. #76b900 only clears contrast on a dark background
+   (~6:1); on our light background it is ~2.7:1, so light mode uses a darkened
+   green (~5:1) that still reads as the same brand colour. */
+.nvidia-green {
+  color: #4f7a00;
+}
+.dark .nvidia-green {
+  color: #76b900;
+}
+
 body {
   background: var(--bg);
   color: var(--text-primary);
