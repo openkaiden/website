@@ -5,6 +5,8 @@
   const GITHUB_URL = 'https://github.com/openkaiden/kaiden';
 
   let modalOpen = $state(false);
+
+  import { OPENSHELL_URL } from '$lib/components/openshell/openshell';
 </script>
 
 <section class="relative pt-32 pb-20 px-6 overflow-hidden">
@@ -32,11 +34,13 @@
           class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border text-xs font-mono"
           style="border-color: var(--border); background: var(--bg-card); color: var(--text-muted)"
         >
+          <!-- currentColor picks up .nvidia-green, so the dot matches the OpenShell
+               wordmark exactly in both themes -->
           <span
-            class="w-1.5 h-1.5 rounded-full animate-pulse"
-            style="background: var(--accent)"
+            class="w-1.5 h-1.5 rounded-full animate-pulse nvidia-green"
+            style="background: currentColor"
           ></span>
-          From the Podman Desktop Team &middot; Open source &middot; Apache 2.0
+          Built on <span class="nvidia-green">OpenShell</span> &middot; Open source &middot; Apache 2.0
         </div>
 
         <h1
@@ -48,7 +52,14 @@
         </h1>
 
         <p class="mt-6 text-lg leading-relaxed max-w-xl" style="color: var(--text-secondary)">
-          Kaiden runs your coding agents in isolated sandboxes and equips them with the models,
+          Kaiden runs your coding agents in isolated sandboxes enforced by
+          <a
+            href={OPENSHELL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="openshell-link"
+          >OpenShell</a>,
+          NVIDIA's open-source runtime for AI agents, and equips them with the models,
           tools, and assets they need. Repeatable, preconfigured environments to iterate faster. Experiment safely. Works locally or in your enterprise environment.
           Built for developers, governed by your platform team.
         </p>
@@ -146,4 +157,14 @@
 <style>
   :global(html:not(.dark) .hero-shot-dark) { display: none; }
   :global(html.dark .hero-shot-light) { display: none; }
+
+  .openshell-link {
+    color: var(--accent-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .openshell-link:hover {
+    opacity: 0.8;
+  }
 </style>

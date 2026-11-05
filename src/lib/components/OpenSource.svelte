@@ -3,8 +3,10 @@
 
   const repos = [
     { label: 'openkaiden/kaiden', href: 'https://github.com/openkaiden/kaiden' },
-    { label: 'openkaiden/kdn', href: 'https://github.com/openkaiden/kdn' }
+    { label: 'openkaiden/kdn', href: 'https://github.com/openkaiden/kdn' },
+    { label: 'NVIDIA/OpenShell', href: 'https://github.com/NVIDIA/OpenShell' }
   ];
+
 </script>
 
 <section class="py-24 px-6">
@@ -24,9 +26,11 @@
           Same foundations, same philosophy: open source, extensible, and yours to run however you want.
         </p>
         <p class="leading-relaxed mb-4" style="color: var(--text-secondary)">
-          The sandboxes that protect your agent sessions are built backed by
+          The sandboxes that protect your agent sessions are enforced by
+          <a href="https://github.com/NVIDIA/OpenShell" target="_blank" rel="noopener noreferrer" class="podman-link">OpenShell</a>
+          and run on
           <a href="https://podman.io" target="_blank" rel="noopener noreferrer" class="podman-link">Podman</a>
-          and
+          containers or
           <a href="https://github.com/containers/libkrun" target="_blank" rel="noopener noreferrer" class="podman-link">libkrun</a>
           microVMs &mdash; the same stacks trusted by millions of developers, now securing your AI agents.
         </p>
@@ -59,23 +63,40 @@
         </div>
       </div>
 
-      <!-- right: podman + heart + kaiden -->
-      <div class="flex items-center justify-center gap-6">
+      <!-- right: kaiden + heart + podman desktop + heart + podman, now with openshell -->
+      <div class="flex items-start justify-center gap-5">
 
         <!-- Kaiden -->
         <div class="flex flex-col items-center gap-3">
           <img
             src="{assets}/icon.png"
             alt="Kaiden"
-            width="96"
-            height="96"
+            width="84"
+            height="84"
             style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
           />
-          <span class="text-[11px] font-mono" style="color: var(--text-muted)">Kaiden</span>
+          <span class="text-[11px] font-mono text-center" style="color: var(--text-muted)">Kaiden</span>
         </div>
 
         <!-- heart -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#f43f5e" style="flex-shrink:0; margin-bottom: 20px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#f43f5e" class="shrink-0 mt-7">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+
+        <!-- OpenShell -->
+        <div class="flex flex-col items-center gap-3">
+          <div
+            class="flex flex-col items-center justify-center leading-tight"
+            style="width: 84px; height: 84px; border-radius: 22%; background: var(--bg-subtle); border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
+          >
+            <span class="text-[10px] font-mono tracking-tight nvidia-green">NVIDIA</span>
+            <span class="text-[13px] font-semibold" style="color: var(--text-primary)">OpenShell</span>
+          </div>
+          <span class="text-[11px] font-mono text-center" style="color: var(--text-muted)">OpenShell</span>
+        </div>
+
+        <!-- heart -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#f43f5e" class="shrink-0 mt-7">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
 
@@ -84,15 +105,15 @@
           <img
             src="https://podman-desktop.io/img/logo.svg"
             alt="Podman Desktop"
-            width="96"
-            height="96"
+            width="84"
+            height="84"
             style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
           />
-          <span class="text-[11px] font-mono" style="color: var(--text-muted)">Podman Desktop</span>
+          <span class="text-[11px] font-mono text-center" style="color: var(--text-muted)">Podman&nbsp;Desktop</span>
         </div>
 
         <!-- heart -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#f43f5e" style="flex-shrink:0; margin-bottom: 20px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#f43f5e" class="shrink-0 mt-7">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
 
@@ -101,14 +122,16 @@
           <img
             src="https://podman.io/logos/optimized/podman-3-logo-266w-253h.webp"
             alt="Podman"
-            width="96"
-            height="96"
-            style="border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
+            width="84"
+            height="84"
+            class="object-contain"
+            style="height: 84px; border-radius: 22%; box-shadow: 0 8px 32px rgba(0,0,0,0.12)"
           />
-          <span class="text-[11px] font-mono" style="color: var(--text-muted)">Podman</span>
+          <span class="text-[11px] font-mono text-center" style="color: var(--text-muted)">Podman</span>
         </div>
 
       </div>
+
 
     </div>
   </div>

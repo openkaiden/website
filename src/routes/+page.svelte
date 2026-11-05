@@ -9,6 +9,7 @@
   import OpenSource from '$lib/components/OpenSource.svelte';
   import Install from '$lib/components/Install.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import BuiltOnOpenShell from '$lib/components/openshell/BuiltOnOpenShell.svelte';
   import { assets } from '$app/paths';
 </script>
 
@@ -44,6 +45,7 @@
   <CorePrinciples />
   <HowItWorks />
   <Capabilities />
+  <BuiltOnOpenShell />
   <ForPlatformEngineers />
   <OpenSource />
   <Install />
