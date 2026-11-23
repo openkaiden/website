@@ -11,7 +11,7 @@ Kaiden provides ready-to-use integrations for all major model providers. Adding 
 
 The Models section covers four areas:
 
-- **LLM Providers** — cloud APIs (Claude, Mistral, Gemini, Vertex AI, OpenAI-compatible endpoints)
+- **LLM Providers** — cloud APIs (Claude, Mistral, Gemini, Cursor, Vertex AI, OpenAI-compatible endpoints)
 - **Local** — models running on your machine via Ollama or RamaLama
 - **In-house** — models hosted on an enterprise OpenShift AI cluster
 - **Semantic Routers** — smart routing rules that direct requests to the right model based on content
@@ -31,10 +31,11 @@ Kaiden ships with extensions for the following cloud providers:
 | **Claude** | Cloud | Anthropic API. Supports custom base URLs. |
 | **Mistral** | Cloud | Mistral API. |
 | **Gemini** | Cloud | Google Gemini API. |
-| **Vertex AI** | Cloud | Google Cloud — runs Anthropic Claude models (claude-opus-4, claude-sonnet-4, claude-haiku-4) on your GCP project. Authenticates via Application Default Credentials. |
+| **Cursor** | Cloud | Cursor API. Requires a Cursor API key (`CURSOR_API_KEY`). |
+| **Vertex AI** | Cloud | Google Cloud — runs Anthropic Claude models (claude-opus-4, claude-sonnet-4, claude-haiku-4) on your GCP project. Authenticates via Application Default Credentials. Requires a Google Cloud project ID, region, and gcloud credentials file. |
 | **OpenAI Compatible** | Cloud / Self-hosted | Any API that speaks the OpenAI protocol — OpenAI itself, Azure OpenAI, or any self-hosted endpoint. Provide a base URL and API key. |
 
-Clicking a provider card opens its configuration: API key, base URL (for OpenAI Compatible and Vertex AI), and which models to make available to agents.
+Clicking a provider card opens its configuration: API key, base URL (for Claude and OpenAI Compatible), project ID, region, and credentials file (for Vertex AI), and which models to make available to agents.
 
 **How model calls are secured:** When an agent inside a sandbox calls an LLM, the request goes through Kaiden's internal routing layer rather than directly to the cloud. Your API key is injected at that layer. The agent makes a standard API call; it never handles the key directly. Rotating a key in the Secret Vault takes effect immediately across all running sandboxes — no restarts needed.
 
