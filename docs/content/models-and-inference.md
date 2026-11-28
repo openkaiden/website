@@ -11,8 +11,8 @@ Kaiden provides ready-to-use integrations for all major model providers. Adding 
 
 The Models section covers four areas:
 
-- **LLM Providers** — cloud APIs (Claude, Mistral, Gemini, Vertex AI, OpenAI-compatible endpoints)
-- **Local** — models running on your machine via Ollama or RamaLama
+- **LLM Providers** — cloud APIs (Claude, Mistral, Gemini, Vertex AI, Cursor, OpenAI-compatible endpoints)
+- **Local** — models running on your machine via Ollama, RamaLama, or Podman AI Lab
 - **In-house** — models hosted on an enterprise OpenShift AI cluster
 - **Semantic Routers** — smart routing rules that direct requests to the right model based on content
 
@@ -32,9 +32,21 @@ Kaiden ships with extensions for the following cloud providers:
 | **Mistral** | Cloud | Mistral API. |
 | **Gemini** | Cloud | Google Gemini API. |
 | **Vertex AI** | Cloud | Google Cloud — runs Anthropic Claude models (claude-opus-4, claude-sonnet-4, claude-haiku-4) on your GCP project. Authenticates via Application Default Credentials. |
+| **Cursor** | Cloud | Cursor API. |
 | **OpenAI Compatible** | Cloud / Self-hosted | Any API that speaks the OpenAI protocol — OpenAI itself, Azure OpenAI, or any self-hosted endpoint. Provide a base URL and API key. |
 
-Clicking a provider card opens its configuration: API key, base URL (for OpenAI Compatible and Vertex AI), and which models to make available to agents.
+Clicking a provider card opens its configuration: API key, base URL (for Claude and OpenAI Compatible), and which models to make available to agents. Vertex AI uses a Google Cloud project, region, and credentials file instead of an API key.
+
+The fields shown when you create a new connection:
+
+| Provider | Setup fields |
+|---|---|
+| **Claude** | Custom base URL (leave empty for https://api.anthropic.com) · Enter your Claude API key (ANTHROPIC_API_KEY) |
+| **Mistral** | Enter your Mistral API key (MISTRAL_API_KEY) |
+| **Gemini** | Enter your Gemini API key (GEMINI_API_KEY). A free-tier key works. |
+| **Vertex AI** | Google Cloud project ID where Anthropic models are enabled (not the ADC quota_project_id) · Google Cloud region (e.g. us-east5, europe-west1) · Path to gcloud credentials file (e.g. ~/.config/gcloud/application_default_credentials.json). Run `gcloud auth application-default login` on the host first. |
+| **Cursor** | Enter your Cursor API key (CURSOR_API_KEY) |
+| **OpenAI Compatible** | baseURL (leave empty to use the OpenAI API) · apiKey |
 
 **How model calls are secured:** When an agent inside a sandbox calls an LLM, the request goes through Kaiden's internal routing layer rather than directly to the cloud. Your API key is injected at that layer. The agent makes a standard API call; it never handles the key directly. Rotating a key in the Secret Vault takes effect immediately across all running sandboxes — no restarts needed.
 
@@ -46,11 +58,13 @@ The **Local** tab shows AI runtimes running directly on your machine.
 
 ![Local models](assets/models-local.png)
 
-Kaiden detects local runtimes automatically — Ollama and RamaLama only appear in this tab if Kaiden can see them running on your machine. If neither is installed, the tab is empty.
+Kaiden detects local runtimes automatically — Ollama, RamaLama, and Podman AI Lab only appear in this tab if Kaiden can see them on your machine. If none of them is installed, the tab is empty.
 
 **Ollama** — a local model server. When detected and running (shown as `Running · 127.0.0.1:11434`), any model you've pulled in Ollama appears in the model picker for sandboxes. Models run entirely on your machine; no data leaves your network.
 
 **RamaLama** — an open-source local model runner. Shows as `Installed · Not running` when installed but not started. Start it from this panel to make its models available.
+
+**Podman AI Lab** — the AI Lab extension for Podman Desktop. Kaiden discovers a running Podman AI Lab service and registers its models with Kaiden, so they appear in the model picker for sandboxes.
 
 The page shows which models are currently loaded in memory with their RAM usage. Large models require significant VRAM; Kaiden shows you what's loaded so you can manage memory.
 
@@ -67,8 +81,8 @@ This is the enterprise path: models deployed and approved by your organization's
 **OpenShift AI** is the in-house provider supported today. More enterprise model platforms will be added in future releases.
 
 To connect to OpenShift AI:
-1. Enter your **Cluster API URL** (e.g., `https://api.openshift.corp.example:6443`)
-2. Enter your **OpenShift token** (an OAuth token or service account token with model-serving access)
+1. Enter the **OpenShift AI cluster API endpoint URL** (e.g., `https://api.openshift.corp.example:6443`)
+2. Enter your **OpenShift AI token** (an OAuth token or service account token with model-serving access). You can get a token by logging in to the OpenShift AI console.
 3. Click **Save & sync models**
 
 Once connected, approved models appear in the list. Models marked **pending approval** are visible but not yet selectable — your organization's admin controls which models agents can use.

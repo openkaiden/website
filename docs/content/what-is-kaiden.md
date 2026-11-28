@@ -47,7 +47,7 @@ Agents are seamlessly equipped with your enterprise APIs, MCP servers, and data 
 Hybrid AI routing dynamically shifts workloads between cloud APIs, on-prem, and local models — based on content, cost, or compliance requirements.
 
 - **Semantic Routers**: route requests by keyword, PII detection, or jailbreak detection. A coding question goes to the fast cloud model; a prompt touching internal data goes to your on-prem model.
-- **Local models**: run Ollama or Ramalama on your machine. Agents use them with zero configuration changes — Kaiden routes the model call to the local server transparently.
+- **Local models**: run Ollama, Ramalama, or Podman AI Lab on your machine. Agents use them with zero configuration changes — Kaiden routes the model call to the local server transparently.
 - **In-house models**: connect to an OpenShift AI cluster. Only models approved by your organization appear in the agent's model picker; everything else is blocked.
 
 ---
@@ -56,8 +56,8 @@ Hybrid AI routing dynamically shifts workloads between cloud APIs, on-prem, and 
 
 Avoid vendor lock-in. Swap your preferred agents and models without rebuilding your environment.
 
-- **Agents**: Claude Code, Goose, Cursor, Codex, OpenCode, Gemini CLI — each plugs in the same way. Switch agents per project or run multiple in parallel.
-- **Models**: Anthropic, OpenAI, Google AI, Azure OpenAI, Ollama, Ramalama, OpenShift AI — all accessible from the same model picker.
+- **Agents**: Claude Code, Goose, Cursor, Codex, GitHub Copilot, OpenCode, OpenClaw, Gemini CLI — each plugs in the same way. Switch agents per project or run multiple in parallel.
+- **Models**: Anthropic, OpenAI, Google AI, Vertex AI, Azure OpenAI, Mistral, Cursor, Ollama, Ramalama, Podman AI Lab, OpenShift AI — all accessible from the same model picker.
 - **Runtime**: Podman (fast, container-based) or MicroVM (hardware-level isolation) — switchable per project without changing anything else.
 - **Source**: Kaiden is open source. The full configuration lives in your project directory as plain YAML.
 
